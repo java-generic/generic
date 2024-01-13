@@ -24,14 +24,23 @@ import java.util.List;
 <N>	Number
  */
 
-class Tool<String> {
-    private List<String> tools = new ArrayList<>(); // Strign형식으로 만 받기
-    Tool() {};
-    public void add(String tool){
-        tools.add(tool);
+class Tool<Stringd> {
+    private List<Stringd> tools = new ArrayList<>(); // Strign형식으로 만 받기
+    private List<String> tools2 = new ArrayList<>(); // Integer 만 받기
+    // ? extends Object
+    public List<?> tools3 = new ArrayList<>(); // ? 와일드카드 타입의 제네릭
+    Tool() {
+        tools2.add("sample tools2");
+    };
+    public void add(ArrayList<Stringd> tool){
+//        tools.add(tool);
     }
     public void getAll(){
         System.out.println(tools.toString());
+    }
+
+    public String toString() {
+        return tools2.get(0);
     }
 
 }
@@ -49,9 +58,18 @@ class Box<T> {
 public class Ex01 {
     public static void main(String[] args) {
         Tool t = new Tool(); // 내부 List에서 String만 받음
-        t.add("툴1");
-        t.add("도구2");
-        t.add("드라이버3");
+//        t.add("툴1");
+//        t.add("도구2");
+//        t.add("드라이버3");
+        t.tools3.add("제네릭1");
+        t.tools3.add(22);
+        t.tools3.add(35.2d);
+        System.out.println(t.tools3.getClass());
+        System.out.println(t.tools3.get(0));
+        System.out.println(t.tools3.get(1));
+        System.out.println(t.tools3.get(2));
+        System.out.println("-----------------------------");
+
         t.getAll();
 
         // 클래스를 T나 V 같은걸로 잡더라도, 실제구현에선 어떤타입쓸지 지정해주는데, 이걸 외부에서 지정한다고 함.
