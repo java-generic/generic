@@ -44,7 +44,7 @@ class Tool<Stringd> {
     }
 
 }
-class Box<T> {
+class BoxEx<T> {
     // 제네릭으로 쓰는 문구는 T D O 같이 참조형이 아닌 문구를 쓰게되면, 제한되지 않은 여러 형식을 받을 수 있다.
     List<T> boxL = new ArrayList<>(); // T라는 제제릭으로 기본형 타입, 참조형 타입 모두 받기 가능
 
@@ -73,9 +73,9 @@ public class GenericsEx {
         t.getAll();
 
         // 클래스를 T나 V 같은걸로 잡더라도, 실제구현에선 어떤타입쓸지 지정해주는데, 이걸 외부에서 지정한다고 함.
-        Box<String> box1 = new Box();// Box 형식으로 외부에서 String만 받도록 제네릭 설정
-        Box<Integer> box2 = new Box();// Box 형식으로 외부에서 int만 받도록 제네릭 설정
-        Box<Tool> box3 = new Box();// Box 형식으로 외부에서 Tool 형식만 받도록 제네릭 설정
+        BoxEx<String> box1 = new BoxEx();// Box 형식으로 외부에서 String만 받도록 제네릭 설정
+        BoxEx<Integer> box2 = new BoxEx();// Box 형식으로 외부에서 int만 받도록 제네릭 설정
+        BoxEx<Tool> box3 = new BoxEx();// Box 형식으로 외부에서 Tool 형식만 받도록 제네릭 설정
         box1.add("귤");
 //        box1.add(22); // int라서 에러
 //        box2.add("딸기"); // String 이라서 에러
