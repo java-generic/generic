@@ -16,7 +16,7 @@ import java.util.List;
 //public class 클래스명<제네릭> {...}
 //public interface 인터페이스명<제네릭> {...}
 
-/* 지정된 기본타입이나 참조타입 이외의 문구를 써서, 모든 타입을 받을 수도 있는데, 주로 쓰는 문구는 다음과 같다.
+/* 사용자정의 문구를 써서 받은 타입을 적용시키는데 사용하며, 주로 쓰는 문구는 다음과 같다.
 <T>	Type
 <E>	Element
 <K>	Key
@@ -55,7 +55,7 @@ class Box<T> {
         System.out.println(boxL.toString());
     }
 }
-public class Ex01 {
+public class GenericsEx {
     public static void main(String[] args) {
         Tool t = new Tool(); // 내부 List에서 String만 받음
 //        t.add("툴1");
